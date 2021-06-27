@@ -26,4 +26,8 @@ echo ""
 echo "***** Files: "
 cat "$filename"
 
+# -- Create the file to be released
+cp "$filename" files.txt
+
+
 
