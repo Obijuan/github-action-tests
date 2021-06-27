@@ -30,7 +30,7 @@ jobs:
 
       - name: Testing env variables
         run: |
-           echo "Version2: ${{ fromJson(steps.script_01.outputs.version) }}"
+           echo "Version2: ${{ steps.script_01.outputs.version }}"
 
       # -- Release!
       - name: Release!
