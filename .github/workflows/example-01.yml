@@ -25,6 +25,11 @@ jobs:
            echo "Done!"
            version=$(cat VERSION)
            echo "VERSION: $version"
+           export version
+
+      - name: Testing env variables
+        run: |
+           echo "Version2: $version"
 
       # -- Release!
       - name: Release!
