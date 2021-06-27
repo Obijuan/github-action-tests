@@ -13,11 +13,13 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-        # -- Checkout the repo
-      - uses: actions/checkout@v2
+      # -- Checkout the repo
+      - name: Checkout!
+        uses: actions/checkout@v2
 
       # -- Execute the script 01
-      - run: |
+      - name: Run Script-01.sh
+        run: |
            echo "Let's execute script-01"
            ./script-01.sh
            echo "Done!"
