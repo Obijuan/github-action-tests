@@ -19,5 +19,5 @@ jobs:
       # -- Execute the script 01
       - run: |
            echo "Let's execute script-01"
-           ./script-01
+           ./script-01.sh
            echo "Done!"
