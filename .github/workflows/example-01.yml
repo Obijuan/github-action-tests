@@ -1,0 +1,23 @@
+# Examples for learning Github Actions
+
+name: Example 1
+
+# Manual activation
+on: [workflow_dispatch]
+
+jobs:
+  
+  # -- Execution of script 1
+  exec-01:
+    
+    runs-on: ubuntu-20.04
+
+    steps:
+        # -- Checkout the repo
+      - uses: actions/checkout@v2
+
+      # -- Execute the script 01
+      - run: |
+           echo "Let's execute script-01"
+           ./script-01
+           echo "Done!"
