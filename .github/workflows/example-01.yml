@@ -19,17 +19,18 @@ jobs:
 
       # -- Execute the script 01
       - name: Run Script-01.sh
+        id: script_01
         run: |
            echo "Let's execute script-01"
            ./script-01.sh
            echo "Done!"
            version=$(cat VERSION)
            echo "VERSION: $version"
-           export version
+           echo "::set-output name=version::$version"
 
       - name: Testing env variables
         run: |
-           echo "Version2: $version"
+           echo "Version2: ${{ fromJson(steps.script_01.outputs.version) }}"
 
       # -- Release!
       - name: Release!
