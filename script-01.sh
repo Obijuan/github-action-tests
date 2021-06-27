@@ -3,4 +3,8 @@
 echo "Inside the script!"
 pwd
 whoami
-ls
+ls > files.txt
+echo ""
+echo "***** Files: "
+cat files.txt
+
