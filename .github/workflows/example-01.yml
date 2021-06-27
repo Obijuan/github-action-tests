@@ -27,6 +27,7 @@ jobs:
 
       # -- Release!
       - name: Release!
+        id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -38,4 +39,7 @@ jobs:
             Testing...
           draft: true
           prerelease: false
-          
+
+      - name: Upload Release Asset
+        run: |
+          echo "URL for uploading: ${{ steps.create_release.outputs.upload_url }}"
