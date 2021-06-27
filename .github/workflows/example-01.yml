@@ -42,8 +42,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v0.0.1
-          release_name: v0.0.1-Testing!
+          tag_name: ${{ env.VERSION }}"
+          release_name: ${{ env.VERSION }}"
           body: |
             This is just a test...
             Testing...
