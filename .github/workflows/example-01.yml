@@ -42,12 +42,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.VERSION }}"
-          release_name: ${{ env.VERSION }}"
+          tag_name: ${{ env.VERSION }}
+          release_name: ${{ env.VERSION }}
           body: |
             This is just a test...
             Testing...
-          draft: true
+          draft: false
           prerelease: false
 
       - name: Showing Upload URL
