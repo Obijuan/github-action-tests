@@ -21,9 +21,9 @@ filename="files-$timestamp.txt"
 echo "*** Filename: $filename"
 
 # -- Store the current files that file
-ls > $filename
+ls > "$filename"
 echo ""
 echo "***** Files: "
-cat $filename
+cat "$filename"
 
 

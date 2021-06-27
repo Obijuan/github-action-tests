@@ -24,3 +24,18 @@ jobs:
            ./script-01.sh
            echo "Done!"
            echo "Github ref: ${{ github.ref }}"
+
+      # -- Release!
+      - name: Release!
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v0.0.1
+          release_name: v0.0.1-Testing!
+          body: |
+            This is just a test...
+            Testing...
+          draft: true
+          prerelease: false
+          
