@@ -26,11 +26,13 @@ jobs:
            echo "Done!"
            version=$(cat VERSION)
            echo "VERSION: $version"
-           echo "::set-output name=version::$version"
+           # echo "::set-output name=version::$version"
+           echo "::set-env name=VERSION::$version"
 
       - name: Testing env variables
         run: |
-           echo "Version2: ${{ steps.script_01.outputs.version }}"
+           # echo "Version2: ${{ steps.script_01.outputs.version }}"
+           echo "Version3: $VERSION"
 
       # -- Release!
       - name: Release!
