@@ -26,13 +26,14 @@ jobs:
            echo "Done!"
            version=$(cat VERSION)
            echo "VERSION: $version"
+           echo "VERSION=$version" >> $GITHUB_ENV
            # echo "::set-output name=version::$version"
-           echo "::set-env name=VERSION::$version"
+           # echo "::set-env name=VERSION::$version"
 
       - name: Testing env variables
         run: |
            # echo "Version2: ${{ steps.script_01.outputs.version }}"
-           echo "Version3: $VERSION"
+           echo "Version3: ${{ env.VERSION }}"
 
       # -- Release!
       - name: Release!
